@@ -1,0 +1,18 @@
+{
+	"apps": {
+		"qingtian_project": {
+			"id": 29,
+			"app_id": "qingtian",
+			"name": "qingtian_project",
+			"secret": "0f60fa1d1c268a50fd570ef1e8067b99",
+			"method": "any",
+			"timeout": 0,
+			"open_api": "/gatekeeper/ping",
+			"white_ips": "",
+			"city_ids": "",
+			"total_query_daily": 30000,
+			"qps": 100,
+			"group_id": 0
+		}
+	}
+}

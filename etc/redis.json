@@ -1,0 +1,9 @@
+{
+  "host": "172.21.139.1",
+  "password": "kc9wj2oflaq",
+  "port": 6379,
+  "db": 4,
+  "idle_timeout": 5,
+  "max_active": 10,
+  "max_idle": 10
+}

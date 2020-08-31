@@ -1,0 +1,35 @@
+{
+  "sys_log": {
+    "filename": "/tmp/gatekeeper_sys.log",
+    "max_size": 50,
+    "max_age": 30,
+    "compress": false,
+    "log_level": "info"
+  },
+  "access_log": {
+    "filename": "/tmp/gatekeeper_access.log",
+    "max_size": 50,
+    "max_age": 30,
+    "compress": false,
+    "log_level": "info"
+  },
+  "time_location": "Asia/Chongqing",
+  "interval": 60000,
+  "http": {
+    "route_prefix": "/gatekeeper",
+    "addr": ":8081",
+    "req_host": "172.20.117.18",
+    "read_timeout ": 30,
+    "write_timeout ": 30,
+    "max_header_bytes ": 20
+  },
+  "cluster": {
+    "cluster_ip": "127.0.0.1",
+    "cluster_addr": ":8081",
+    "cluster_list": "127.0.0.1"
+  }
+}
+
+
+
+

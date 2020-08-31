@@ -1,0 +1,94 @@
+{
+	"module": {
+		"qingtian_status": {
+			"base": {
+				"id": 28,
+				"load_type": "http",
+				"name": "qingtian_status",
+				"service_name": "擎天工单系统状态检测接口",
+				"pass_auth_type": 2,
+				"frontend_addr": ""
+			},
+			"match_rule": {
+				"id": 150,
+				"module_id": 28,
+				"type": "url_prefix",
+				"rule": "/gatekeeper/status",
+				"rule_ext": "",
+				"url_rewrite": "^/gatekeeper(.*) $1"
+			},
+			"load_balance": {
+				"id": 147,
+				"module_id": 28,
+				"check_method": "httpchk",
+				"check_url": "/status",
+				"check_timeout": 2000,
+				"check_interval": 5000,
+				"type": "round-robin",
+				"ip_list": "172.21.141.38:8891",
+				"weight_list": "100",
+				"forbid_list": "",
+				"proxy_connect_timeout": 10000,
+				"proxy_header_timeout": 10000,
+				"proxy_body_timeout": 10000,
+				"max_idle_conn": 100,
+				"idle_conn_timeout": 10000
+			},
+			"access_control": {
+				"id": 147,
+				"module_id": 28,
+				"black_list": "",
+				"white_list": "",
+				"white_host_name": "",
+				"auth_type": "",
+				"client_flow_limit": 1,
+				"open": 0
+			}
+		},
+		"sql_system_ping": {
+			"base": {
+				"id": 29,
+				"load_type": "http",
+				"name": "sql_system_ping",
+				"service_name": "sql系统状态检测接口",
+				"pass_auth_type": 2,
+				"frontend_addr": ""
+			},
+			"match_rule": {
+				"id": 151,
+				"module_id": 29,
+				"type": "url_prefix",
+				"rule": "/gatekeeper/ping",
+				"rule_ext": "",
+				"url_rewrite": "^/gatekeeper(.*) $1"
+			},
+			"load_balance": {
+				"id": 148,
+				"module_id": 29,
+				"check_method": "httpchk",
+				"check_url": "/ping",
+				"check_timeout": 2000,
+				"check_interval": 5000,
+				"type": "round-robin",
+				"ip_list": "172.21.141.38:8001",
+				"weight_list": "100",
+				"forbid_list": "",
+				"proxy_connect_timeout": 10000,
+				"proxy_header_timeout": 10000,
+				"proxy_body_timeout": 10000,
+				"max_idle_conn": 100,
+				"idle_conn_timeout": 10000
+			},
+			"access_control": {
+				"id": 148,
+				"module_id": 29,
+				"black_list": "",
+				"white_list": "",
+				"white_host_name": "",
+				"auth_type": "",
+				"client_flow_limit": 10,
+				"open": 0
+			}
+		}
+	}
+}
